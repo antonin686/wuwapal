@@ -9,13 +9,12 @@ const config = {
 		inspector: true,
 	},
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({
+			fallback: 'index.html',
+		}),
 		alias: {
 			"@": "./src",
 		},
-		prerender: {
-			entries: [],
-		}
 	},
 
 };
