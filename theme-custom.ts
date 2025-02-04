@@ -8,8 +8,8 @@ export const myCustomTheme: CustomThemeConfig = {
 		'--theme-font-family-heading': 'system-ui',
 		'--theme-font-color-base': 'var(--color-surface-900)',
 		'--theme-font-color-dark': 'var(--color-surface-50)',
-		'--theme-rounded-base': '24px',
-		'--theme-rounded-container': '24px',
+		'--theme-rounded-base': '12px',
+		'--theme-rounded-container': '12px',
 		'--theme-border-base': '1px',
 		'--on-primary': '255 255 255',
 		'--on-secondary': '255 255 255',
@@ -86,7 +86,7 @@ export const myCustomTheme: CustomThemeConfig = {
 		'--color-surface-500': '43 46 64',
 		'--color-surface-600': '39 41 58',
 		'--color-surface-700': '32 35 48',
-		'--color-surface-800': '26 28 38',
+		'--color-surface-800': '35 35 46',
 		'--color-surface-900': '21 23 30'
 	}
 };

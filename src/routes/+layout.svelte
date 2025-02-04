@@ -15,7 +15,7 @@
 <div class="flex">
 	<SvelteKitTopLoader color="#D4163C" />
 	<Sidebar />
-	<main class="flex md:h-screen container mx-auto p-10">
+	<main class="flex flex-col md:h-screen container mx-auto p-10 gap-10">
 		{@render children()}
 	</main>
 </div>

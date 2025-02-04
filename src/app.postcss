@@ -19,3 +19,21 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
 	background: rgb(212, 22, 60);
 }
+
+.gradient-heading {
+	background: linear-gradient(to right, rgb(var(--color-primary-500)), #fff);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: transparent;
+	width: fit-content;
+	font-weight: 600;
+}
+
+.card-header{
+	@apply text-xl font-bold;
+}
+
+.card-content {
+	@apply p-4 text-tertiary-500;
+}

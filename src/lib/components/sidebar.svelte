@@ -52,6 +52,7 @@
 	.sidebar {
 		background-color: var(--bg-primary);
 		transition: width 600ms ease;
+		border-radius: 0.375rem; 
 	}
 
 	.sidebar-nav {
