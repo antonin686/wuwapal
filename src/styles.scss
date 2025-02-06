@@ -1,18 +1,29 @@
+@use "sass:map";
 @use "@angular/material" as mat;
-@use "./../theme-colors" as my-theme;
+@use "./../theme-colors" as myTheme;
 @import "tailwindcss";
+@import "material-symbols";
+
+$primary: map.get(myTheme.$primary-palette, 50);
+
+:root {
+  --ng-progress-color: #ea085b;
+}
+
 html {
   color-scheme: dark;
   @include mat.theme(
     (
       color: (
-        primary: my-theme.$primary-palette,
-        tertiary: my-theme.$tertiary-palette,
+        primary: myTheme.$primary-palette,
+        tertiary: myTheme.$tertiary-palette,
       ),
       typography: Roboto,
       density: 0,
-    )
+    ),
   );
+
+  background-color: #15171E;
 }
 
 html,
@@ -23,3 +34,8 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.text-primary {
+  color: $primary;
+}
+

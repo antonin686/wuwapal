@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MatIconModule } from '@angular/material/icon'
-import {MatButtonModule} from '@angular/material/button';
+import { NgProgressbar } from 'ngx-progressbar';
+import { NgProgressRouter } from 'ngx-progressbar/router';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MatIconModule, MatButtonModule],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [RouterOutlet, NgProgressbar, NgProgressRouter],
+  template: ` <ng-progress ngProgressRouter />
+    <router-outlet></router-outlet>`,
 })
 export class AppComponent {
   title = 'wuwapal';

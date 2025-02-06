@@ -1,0 +1,128 @@
+@use 'sass:map';
+@use "../../../../theme-colors" as myTheme;
+
+$text-primary: #b6b6b6;
+$text-secondary: #ececec;
+$bg-primary: #23232e;
+$bg-secondary: #141418;
+$transition-speed: 600ms;
+
+$primary: map.get(myTheme.$primary-palette, 50);
+
+.sidebar {
+  background-color: $bg-primary;
+  transition: width $transition-speed ease;
+  border-radius: 0.375rem;
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  width: 100%;
+  &:last-child {
+    margin-top: auto;
+  }
+}
+
+.nav-link, .logo-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  text-decoration: none;
+  transition: $transition-speed;
+}
+
+.link-text {
+  display: none;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.4rem;
+  letter-spacing: 0.3ch;
+  width: 100%;
+  img {
+    transform: rotate(0deg);
+    transition: $transition-speed;
+  }
+}
+
+.logo-text {
+  display: inline;
+  position: absolute;
+  left: -999px;
+  transition: $transition-speed;
+}
+
+.sidebar:hover {
+  .logo img {
+    transform: rotate(-360deg);
+  }
+}
+
+.active {
+  background-color: $primary;
+}
+
+.active:hover{
+  background-color: $primary;
+}
+
+@media only screen and (max-width: 600px) {
+  .sidebar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+    position: fixed;
+    overflow: scroll;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  .nav-item:last-child {
+    margin-top: 0%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .sidebar {
+    top: 0;
+    width: 6rem;
+    height: 100vh;
+    &:hover {
+      width: 16rem;
+      .link-text {
+        display: inline;
+      }
+      .logo img {
+        margin-left: 12rem;
+      }
+      .logo-text {
+        left: -0.75rem;
+        top: 1.65rem;
+      }
+    }
+  }
+}

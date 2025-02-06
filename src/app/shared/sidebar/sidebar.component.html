@@ -1,0 +1,43 @@
+<aside>
+  <nav class="sidebar">
+    <ul class="sidebar-nav">
+      <li class="logo bg-[#141418]">
+        <a routerLink="/" class="logo-link">
+          <div
+            class="link-text logo-text ml-12 overflow-visible h-11 flex items-center -mt-1.5"
+          >
+            <div>WuWaPal</div>
+            <div
+              class="absolute top-8 right-0 text-[.5rem] text-primary font-bold"
+            >
+              .com
+            </div>
+          </div>
+          <img
+            alt="Brand Logo"
+            loading="lazy"
+            decoding="async"
+            class="w-10 min-w-10 mx-7"
+            src="/android-chrome-192x192.png"
+          />
+        </a>
+      </li>
+      @for(nav of navs(); track nav.title){
+      <li mat-ripple class="nav-item">
+        <a
+          [routerLink]="nav.path"
+          [class.active]="checkIfActive(nav.path)"
+          class="flex gap-3 text-xl items-center nav-link"
+        >
+          <mat-icon class="w-8 min-w-8 md:ml-9 material-symbols-outlined">{{
+            nav.icon
+          }}</mat-icon>
+          <span class="link-text">
+            {{ nav.title }}
+          </span>
+        </a>
+      </li>
+      }
+    </ul>
+  </nav>
+</aside>
